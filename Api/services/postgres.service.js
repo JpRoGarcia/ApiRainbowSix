@@ -4,7 +4,7 @@ const execute = async (sql) => {
     const client = new pg.Client({
         user: 'postgres',
         host: 'localhost',
-        database: 'test',
+        database: 'rainbowsix',
         password: '07150126',
         port: 5432,
       });
