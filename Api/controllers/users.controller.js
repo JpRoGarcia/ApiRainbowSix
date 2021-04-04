@@ -7,7 +7,6 @@ const getUsers = async (req, res) => {
         let rows = response_db.rows;
         return res.send(rows);
     } catch (error) {
-        console.error(error);
         return res.send(error);
     }
 }
@@ -32,7 +31,7 @@ const saveUsers = async (req, res) => {
     } catch (error) {
         return res.send({
             ok: false,
-            message: "Error al crear el usuario",
+            message: "El Usuario ya se Encuentra Registrado",
             info: error,
     });
     }
@@ -46,13 +45,13 @@ const deleteUsers = async (req, res) => {
         let row_count = response_db.rowCount;
         return res.send({
             ok: row_count == 1 ? true : false,
-            message: "Usuario eliminado",
+            message: "Usuario Eliminado",
             info: idusuario,
         });
        } catch (error) {
         return res.send({
           ok: false,
-          message: "Error al eliminar el usuario",
+          message: "El Usuario No se Encuentra Registrado",
           info: error,
         });
     }  
@@ -76,18 +75,18 @@ const updateUsers = async (req, res) => {
       let row_count = response_db.rowCount;
       return res.send({
         ok: row_count == 1 ? true : false,
-        message: "Usuario actualizado",
+        message: "Usuario Actualizado",
         info: idusuario,
       });
     } catch (error) {
       console.error(error);
       return res.send({
         ok: false,
-        message: "Error al actualizar el usuario",
+        message: "El Usuario No se Encuentra Registrado",
         info: error,
       });
     }
-  };
+};
 
 
-module.exports = { getUsers, saveUsers, deleteUsers, updateUsers};
+module.exports = { getUsers, saveUsers, deleteUsers, updateUsers };
