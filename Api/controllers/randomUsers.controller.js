@@ -9,13 +9,13 @@ function RandomInt(min, max) {
 
 const saveRandomUsers = async (req, res) => {  
 
-    let idUsuario = RandomInt(1, 1000000);
+    let idUsuario = RandomInt(1000000, 10000000);
     let nroPartidas = RandomInt(1, 1000);
     let RolFavorito = Rol[RandomInt(0, 7)];
     let ArmaFavorita = Arma[RandomInt(0, 6)];
-    let BajaConfirmada = RandomInt(1, 50);
+    let BajaConfirmada = RandomInt(1, 1100);
     let Muerte = RandomInt(1, BajaConfirmada);
-    let MunicionGastada = RandomInt(1, 10000);
+    let MunicionGastada = RandomInt(1, 100000);
     let MunicionImpactada = RandomInt(1, MunicionGastada);
 
     try {
