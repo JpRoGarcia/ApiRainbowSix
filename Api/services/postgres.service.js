@@ -1,5 +1,6 @@
 const pg = require("pg");
 
+//Conexion con Base de Datos 
 const execute = async (sql) => {
     const client = new pg.Client({
         user: 'postgres',

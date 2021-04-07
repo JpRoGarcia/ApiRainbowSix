@@ -1,6 +1,5 @@
-/**
- * Archivo Principal de Api
- */
+//Archivo Principal de Api
+
  const express = require('express');
 
  const app = express();

@@ -1,12 +1,13 @@
-/**
- * Algoritmo de ordenamiento de MERGE-SORT
- */
+// Algoritmo de ordenamiento de Merge-Sort
+
 
 /**
  * Ordenar los vectores y unirlos en una sola lista
  * @param {*} arrayIzq
  * @param {*} arrayDer
  */
+
+// Algoritmo de ordenamiento de Merge-Sort para el Porcentaje KoD
 const mergeKoD = (arrayIzq, arrayDer) => {
   let arrayOrdenado = [];
   while (arrayIzq.length && arrayDer.length) {
@@ -20,23 +21,25 @@ const mergeKoD = (arrayIzq, arrayDer) => {
 };
 
 /**
- * Merge sort
  * @param {*} array Input
  */
  const mergeSortKoD = (array) => {
   //Comprobar la longitud del array
-  if (array.length <= 1) return array;
-
-  let mitad = Math.floor(array.length / 2);
-  // Dividir lista en sublistas
-  let arrayIzq = mergeSortKoD(array.slice(0, mitad));
-  let arrayDer = mergeSortKoD(array.slice(mitad));
-
-  // Ordenar y unir
-  let arrayOrdenado = mergeKoD(arrayIzq, arrayDer);
-  return arrayOrdenado;
+  if (array.length <= 1){
+    return array;
+  } else {
+    let mitad = Math.floor(array.length / 2);
+    // Dividir lista en sublistas
+    let arrayIzq = mergeSortKoD(array.slice(0, mitad));
+    let arrayDer = mergeSortKoD(array.slice(mitad));
+  
+    // Ordenar y unir
+    let arrayOrdenado = mergeKoD(arrayIzq, arrayDer);
+    return arrayOrdenado;
+  }
 };
 
+// Algoritmo de ordenamiento de Merge-Sort para el Porcentaje Precision
 const mergePrecision = (arrayIzq, arrayDer) => {
   let arrayOrdenado = [];
   while (arrayIzq.length && arrayDer.length) {
@@ -50,21 +53,23 @@ const mergePrecision = (arrayIzq, arrayDer) => {
 };
 
 /**
- * Merge sort
  * @param {*} array Input
  */
  const mergeSortPrecision = (array) => {
   //Comprobar la longitud del array
-  if (array.length <= 1) return array;
+  if (array.length <= 1) {
+    return array;
+  } else{
+    let mitad = Math.floor(array.length / 2);
 
-  let mitad = Math.floor(array.length / 2);
-  // Dividir lista en sublistas
-  let arrayIzq = mergeSortPrecision(array.slice(0, mitad));
-  let arrayDer = mergeSortPrecision(array.slice(mitad));
+    // Dividir lista en sublistas
+    let arrayIzq = mergeSortPrecision(array.slice(0, mitad));
+    let arrayDer = mergeSortPrecision(array.slice(mitad));
 
-  // Ordenar y unir
-  let arrayOrdenado = mergePrecision(arrayIzq, arrayDer);
-  return arrayOrdenado;
+    // Ordenar y unir
+    let arrayOrdenado = mergePrecision(arrayIzq, arrayDer);
+    return arrayOrdenado;
+  } 
 };
 
 module.exports = { mergeSortKoD, mergeSortPrecision };
